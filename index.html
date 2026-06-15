@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ESP32 — Monitor de Temperatura</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div class="container">
+
+  <h1>
+    Monitor ESP32
+    <span class="chip">DHT11 · Firebase</span>
+  </h1>
+
+  <div class="url-bar">
+    <input type="text" id="firebase-url"
+      placeholder="https://seu-projeto-default-rtdb.firebaseio.com"
+      value="https://sensor-de-temperatura-69d2f-default-rtdb.firebaseio.com" />
+    <button class="btn-primary" onclick="connect()">Conectar</button>
+  </div>
+
+  <div id="error-msg" class="alert alert-error"></div>
+
+  <div id="theme-banner" class="theme-banner">
+    <span id="banner-icon"></span>
+    <span id="banner-txt"></span>
+  </div>
+
+  <div class="grid">
+    <div class="card main-card">
+      <div class="section-label">Temperatura</div>
+      <div class="big-temp"><span id="temp-val">--</span><sup>°C</sup></div>
+      <div class="status-row">
+        <span class="dot" id="status-dot"></span>
+        <span id="status-txt">Aguardando conexão</span>
+      </div>
+    </div>
+
+    <div class="side-col">
+      <div class="card">
+        <div class="section-label">Umidade</div>
+        <div class="hum-val" id="hum-val">-- <span>%</span></div>
+      </div>
+      <div class="card">
+        <div class="section-label">Último envio</div>
+        <div class="time-group">
+          <div class="date-val" id="date-val">--</div>
+          <div class="time-val" id="time-val">--</div>
+        </div>
+        <div class="device-val" id="device-val">--</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="section-label">Histórico de leituras</div>
+    <div class="history-list" id="history-list">
+      <p class="empty-state">Nenhum dado carregado ainda.</p>
+    </div>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
