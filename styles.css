@@ -353,6 +353,7 @@ body.theme-hot .section-label { color: #d85a30; }
   .chip { font-size: 10px; padding: 3px 10px; }
   .url-bar { flex-direction: column; }
   .url-bar input, .btn-primary { width: 100%; }
+  .side-col { flex-direction: row; gap: 12px; }
 }
 
 @media (max-width: 480px) {
